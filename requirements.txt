@@ -1,0 +1,14 @@
+# jupyter
+ipykernel
+
+# data process
+pandas
+
+# math
+sympy
+
+# visualization
+matplotlib
+
+# read xlsx
+openpyxl
