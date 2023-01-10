@@ -1,14 +1,18 @@
 # jupyter
 ipykernel
+ipywidgets
 
 # data process
 pandas
 
 # math
+scipy
+pooch # scipy dataset dependency
 sympy
 
 # visualization
 matplotlib
+ipympl
 
 # read xlsx
 openpyxl
