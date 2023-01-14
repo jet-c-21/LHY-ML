@@ -4,6 +4,7 @@ ipywidgets
 
 # data process
 pandas
+scikit-learn
 
 # math
 scipy
@@ -16,3 +17,9 @@ ipympl
 
 # read xlsx
 openpyxl
+
+# console prompt
+tqdm
+
+# tools
+more-itertools

@@ -20,7 +20,7 @@ class MultiLinearRegression:
 
     def get_loss(self, X, y, w, b):
         m = X.shape[0]
-        loss = np.sum((X.dot(w) + b - y) ** 2) / (2 * m)
+        loss = np.sum((X @ w + b - y) ** 2) / (2 * m)
         return loss
 
     def get_gradient(self, X, y, w, b):
