@@ -60,6 +60,10 @@ class LogisticRegression:
 
 
 class LogisticRegressionAdaGrad(LogisticRegression):
+    def __init__(self, iteration, lr, lambda_=0, verbose=True, random_state=369):
+        super().__init__(iteration, lr, verbose, random_state)
+        self.lambda_ = lambda_
+
     def fit(self, X: np.ndarray, Y: np.ndarray, init_w=None, init_b=None):
         m, n = X.shape
         Y = Y.reshape((-1,))  # ensure Y is 1d (m, )
@@ -79,12 +83,13 @@ class LogisticRegressionAdaGrad(LogisticRegression):
         sum_of_b_grad = 0
         for i in range(self.iteration):
             y_hat = self.sigmoid(X @ self.w + self.b)  # (m, )
-            loss = -(Y @ np.log(y_hat) + (1 - Y) @ np.log(1 - y_hat))
+            loss = -(Y @ np.log(y_hat) + (1 - Y) @ np.log(1 - y_hat)) / m
             self.history.append(loss)
 
             error = y_hat - Y
-            w_grad = X.T @ error
-            b_grad = np.sum(error)
+            w_grad = X.T @ error / m
+            w_grad += (self.lambda_ / m) * self.w
+            b_grad = np.sum(error) / m
 
             sum_of_w_grad += w_grad ** 2
             sum_of_b_grad += b_grad ** 2
