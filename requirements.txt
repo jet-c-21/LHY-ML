@@ -23,3 +23,7 @@ tqdm
 
 # tools
 more-itertools
+
+# dl
+tensorflow
+tensorrt
