@@ -14,6 +14,17 @@ sympy
 # visualization
 matplotlib
 ipympl
+seaborn
+plotly
+bokeh
+
+## for datashader
+holoviews
+hvplot
+datashader
+fastparquet
+python-snappy
+
 
 # read xlsx
 openpyxl
